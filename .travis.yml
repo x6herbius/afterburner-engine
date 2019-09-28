@@ -85,7 +85,7 @@ jobs:
       after_script:
         - ccache --show-stats
         - sh ../scripts/continious_upload.sh xashdroid.apk
-#    - # ...
+    - # ...
       name: "Build for Windows MinGW"
       cache: ccache
       os: linux
