@@ -391,15 +391,6 @@ static struct nsthread_s
 #endif
 ;
 
-#ifdef _WIN32
-static void NET_InitializeCriticalSections( void )
-{
-	net.threads_initialized = true;
-	pInitializeCriticalSection( &nsthread.mutexns );
-	pInitializeCriticalSection( &nsthread.mutexres );
-}
-#endif
-
 void NET_ResolveThread( void )
 {
 	int sin_addr = 0;
