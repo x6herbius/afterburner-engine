@@ -19,7 +19,7 @@ GNU General Public License for more details.
 #include "mathlib.h"
 #ifdef _WIN32
 // Winsock
-#include <WS2tcpip.h>
+#include <ws2tcpip.h>
 #else
 // BSD sockets
 #include <sys/types.h>
