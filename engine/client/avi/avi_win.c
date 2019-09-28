@@ -295,7 +295,7 @@ int AVI_TimeToSoundPosition( movie_state_t *Avi, int time )
 }
 
 // gets the raw frame data
-byte *AVI_GetVideoFrame( movie_state_t *Avi, long frame )
+byte *AVI_GetVideoFrame( movie_state_t *Avi, int frame )
 {
 	LPBITMAPINFOHEADER	frame_info;
 	byte		*frame_raw;
