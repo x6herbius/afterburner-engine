@@ -360,7 +360,7 @@ void *NET_ThreadStart( void *unused )
 #define mutex_lock EnterCriticalSection
 #define mutex_unlock LeaveCriticalSection
 #define detach_thread( x ) CloseHandle(x)
-#define create_thread( pfn ) nsthread.thread = CreateThread( NULL, 0, pfn, NULL, 0, NULL )
+#define create_thread( pfn ) (nsthread.thread = CreateThread( NULL, 0, pfn, NULL, 0, NULL ))
 #define mutex_t  CRITICAL_SECTION
 #define thread_t HANDLE
 DWORD WINAPI NET_ThreadStart( LPVOID unused )
@@ -2459,7 +2459,7 @@ static void HTTP_Clear_f( void )
 			FS_Close( file->file );
 
 		if( file->socket != -1 )
-			close ( file->socket );
+			closesocket( file->socket );
 
 		Mem_Free( file );
 	}
